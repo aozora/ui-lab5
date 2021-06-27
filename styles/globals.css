@@ -1,16 +1,220 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+/* CSS Custom Properties */
+
+:root {
+  --font-family: 'Merriweather', serif;
+  --font-family-alt: 'Merriweather Sans', sans-serif;
+  --font-weight-light: 300;
+  --font-weight: 400;
+  --font-weight-bold: 600;
+  --font-weight-black: 900;
+
+  --font-size-display: 3.4rem;
+  --font-size-xx-large: 2.027rem;
+  --font-size-x-large: 1.802rem;
+  --font-size-large: 1.424rem;
+  --font-size-medium: 1.266rem;
+  --font-size: 1rem;
+  --font-size-small: 0.889rem;
+  --font-size-x-small: 0.75rem;
+  --font-size-xx-small: 0.702rem;
+
+  --lineheight-text: 1.6;
+  --lineheight-heading: 1.2;
+
+  --color-background: #fff;
+  --color-background-selection: #f0f2f3;
+  --color-text-default: #272732;
+  --color-text-alt: #fff;
+
+  --color-accent: #A73448;
+  --color-base: #f0f0f1;
+  --color-dark: #262626;
+  --color-mid: #999;
+  --color-theme-1: #f8d72e;
+
+  --border-color: #e9e9e9;
+  --border-width: 1px;
+
+  --grid-compound-6-4: 2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr;
+  --grid-column-gap: 2vw;
+  --grid-row-gap: 2vh;
+  --max-width: 72rem;
+
+  --spacing-xx-small: .25rem;
+  --spacing-x-small: .5rem;
+  --spacing-small: .75rem;
+  --spacing: 1rem;
+  --spacing-medium: 1.5rem;
+  --spacing-large: 2rem;
+  --spacing-x-large: 4rem;
+  --spacing-xx-large: 8rem;
+
+  --duration-default: .25s;
 }
 
+@font-face {
+  font-family: "didot-regular";
+  src: url("/fonts/didot-regular.woff2") format("woff2"),
+  url("/fonts/didot-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "didot-bold";
+  src: url("/fonts/didot-bold.woff2") format("woff2"),
+  url("/fonts/didot-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "gill-sans-light";
+  src: url("/fonts/gill-sans-light.woff2") format("woff2"),
+  url("/fonts/gill-sans-light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "thorowgood-becker-italic";
+  src: url("/fonts/thorowgood-becker-italic.woff2") format("woff2"),
+  url("/fonts/thorowgood-becker-italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "opensans-regular";
+  src: url("/fonts/opensans-regular.woff2") format("woff2"),
+  url("/fonts/opensans-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "opensans-bold";
+  src: url("/fonts/opensans-bold.woff2") format("woff2"),
+  url("/fonts/opensans-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "opensanscondensed-bold";
+  src: url("/fonts/opensanscondensed-bold.woff2") format("woff2"),
+  url("/fonts/opensanscondensed-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "opensanscondensed-light";
+  src: url("/fonts/opensanscondensed-light.woff2") format("woff2"),
+  url("/fonts/opensanscondensed-light.woff") format("woff");
+}
+
+/* =viewport */
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+/* =selection. */
+
+::-moz-selection {
+  background-color: var(--color-background-selection);
+  text-shadow: none;
+}
+
+::selection {
+  background-color: var(--color-background-selection);
+  text-shadow: none;
+}
+
+/* =layout */
+
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 0;
+  font-feature-settings: "liga" 1, "onum" 1;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--lineheight-text);
+  color: var(--color-text-default);
+}
+
+/* =hx */
+
+h1, h2, h3 {
+  margin: 0 0 var(--spacing) 0;
+}
+
+/* =hx */
+
+p {
+  margin: 0 0 var(--spacing) 0;
+}
+
+.lede {
+  font-size: var(--font-size-medium);
+}
+
+/* =a */
+
 a {
-  color: inherit;
+  color: var(--color-accent);
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+/* =hr */
+
+hr {
+  clear: both;
+  display: block;
+  margin: var(--spacing-large) 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-bottom: var(--border-width) solid var(--border-color);
+}
+
+/* =img */
+
+img {
+  margin: 0;
+  border-width: 0;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+body#example-3 {
+  position: relative;
+  background-color: #8a8988;
+  font-family: "slab";
+  color: #f7eed7;
+}
+
+body#example-3::after {
+  position: static;
+  grid-column: 4;
+  grid-row: 1 / 3;
+  z-index: 1;
+  font-size: 10rem;
+
+  content: "duroplast";
+  top: 2rem;
+  right: 2rem;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  mix-blend-mode: overlay;
+}
+
+@media (min-width: 48em) {
+  body#example-3 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, auto);
+  }
 }
